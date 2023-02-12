@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Todo {
+  id: Int!
+  description: String!
+  done: Boolean!
+}
+
+type Query {
+  """Hola Mundo es lo que retorna"""
+  helloWorld: String!
+  randomNumber: Float!
+
+  """From zero to argument To"""
+  randomFromZeroTo(to: Int): Int!
+  todos(status: Boolean): [Todo!]!
+  todo(id: Int!): Todo!
+}
+
+type Mutation {
+  updateTodo(updateTodoInput: UpdateTodoInput!): Todo!
+  createTodo(createTodoInput: CreateTodoInput!): Todo!
+  removeTodo(id: Int!): Boolean!
+}
+
+input UpdateTodoInput {
+  id: Int!
+
+  """What needs to be done"""
+  description: String
+  done: Boolean
+}
+
+input CreateTodoInput {
+  """What needs to be done"""
+  description: String!
+}
